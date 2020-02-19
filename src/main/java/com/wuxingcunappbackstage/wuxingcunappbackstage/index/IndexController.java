@@ -3,9 +3,14 @@ package com.wuxingcunappbackstage.wuxingcunappbackstage.index;
 import com.alibaba.fastjson.JSON;
 import com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.CarouselList;
 import com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.backgroundcolor.BackgroundColor;
+import com.wuxingcunappbackstage.wuxingcunappbackstage.tools.ImageStream;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/index")
@@ -44,5 +49,9 @@ public class IndexController {
 
 
         return jsonUsers;
+    }
+    @GetMapping(value = "/ad", produces = MediaType.IMAGE_JPEG_VALUE)
+    public byte[] advertisement() throws IOException {
+        return new ImageStream("src/main/resources/ad.jpg").getBytes();
     }
 }
