@@ -4,23 +4,33 @@ import com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.backgr
 
 
 public class CarouselList {
+    Carousel[] carousels;
 
-    private String[] images;
-    private BackgroundColor[] backgroundColors;
-
-    public BackgroundColor[] getBackgroundColors() {
-        return backgroundColors;
+    public CarouselList() {
+        carousels = new Carousel[3];
+        carousels[0] = new Carousel();
+        carousels[1] = new Carousel();
+        carousels[2] = new Carousel();
     }
 
-    public void setBackgroundColors(BackgroundColor[] backgroundColors) {
-        this.backgroundColors = backgroundColors;
+    public void setCarousels(Carousel[] carousels) {
+        this.carousels = carousels;
     }
 
-    public String[] getImages() {
-        return images;
+    public Carousel[] getCarousels() {
+        return carousels;
     }
 
     public void setImages(String[] images) {
-        this.images = images;
+        carousels[0].setImage(images[0]);
+        carousels[1].setImage(images[1]);
+        carousels[2].setImage(images[2]);
     }
+
+    public void setBackgroundColors(BackgroundColor[] backgroundColors) {
+        carousels[0].setBackgroundColor(backgroundColors[0]);
+        carousels[1].setBackgroundColor(backgroundColors[1]);
+        carousels[2].setBackgroundColor(backgroundColors[2]);
+    }
+
 }
