@@ -6,12 +6,12 @@ import com.wuxingcunappbackstage.wuxingcunappbackstage.product.info.sales.SalesI
 import com.wuxingcunappbackstage.wuxingcunappbackstage.product.info.type.BuyType;
 
 public class ProductInfo {
-    private String[] imgSrc;
-    private String title;
-    private CommentList commentList;
-    private PriceBox priceBox;
-    private SalesInfo salesInfo;
-    private BuyType buyType;
+    private String[] imgSrc; //图片路径
+    private String title; //商品名称
+    private CommentList commentList; //评论列表
+    private PriceBox priceBox; //价格信息
+    private SalesInfo salesInfo; //销售，库存，浏览量信息
+    private BuyType buyType; //购买类型
 
     public ProductInfo() {
         imgSrc = new String[3];

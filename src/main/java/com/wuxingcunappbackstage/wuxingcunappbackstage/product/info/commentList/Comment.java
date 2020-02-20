@@ -5,11 +5,11 @@ import com.wuxingcunappbackstage.wuxingcunappbackstage.product.info.type.BuyType
 import java.util.Date;
 
 public class Comment {
-    private String name;
-    private Date date;
-    private String content;
-    private BuyType buyType;
-    private int eavaluate;
+    private String name; //用户名称
+    private Date date; //购买时间
+    private String content; //评价内容
+    private BuyType buyType; //购买类型
+    private int eavaluate; //评价等级
 
     public Comment() {
         name = "张迎喜";
