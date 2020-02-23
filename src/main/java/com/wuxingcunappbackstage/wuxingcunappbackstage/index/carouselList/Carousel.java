@@ -1,7 +1,9 @@
 package com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList;
 
 import com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.backgroundcolor.BackgroundColor;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Carousel {
     private String image;
     private BackgroundColor backgroundColor;

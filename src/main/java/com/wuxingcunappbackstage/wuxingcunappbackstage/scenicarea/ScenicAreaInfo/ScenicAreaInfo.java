@@ -1,12 +1,8 @@
 package com.wuxingcunappbackstage.wuxingcunappbackstage.scenicarea.ScenicAreaInfo;
 
 public class ScenicAreaInfo {
-    private String[] imgSrcs;
+    private SwiperList[] swiperList;
     private String introduction;
-
-    public void setImgSrcs(String[] imgSrcs) {
-        this.imgSrcs = imgSrcs;
-    }
 
     public String getIntroduction() {
         return introduction;
@@ -16,7 +12,11 @@ public class ScenicAreaInfo {
         this.introduction = introduction;
     }
 
-    public String[] getImgSrcs() {
-        return imgSrcs;
+    public void setSwiperList(SwiperList[] swiperList) {
+        this.swiperList = swiperList;
+    }
+
+    public SwiperList[] getSwiperList() {
+        return swiperList;
     }
 }

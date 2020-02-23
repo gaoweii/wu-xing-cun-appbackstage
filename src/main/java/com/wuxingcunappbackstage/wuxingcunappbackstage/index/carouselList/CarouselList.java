@@ -1,17 +1,12 @@
 package com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList;
 
 import com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.backgroundcolor.BackgroundColor;
+import org.springframework.stereotype.Component;
 
 
+@Component
 public class CarouselList {
     Carousel[] carousels;
-
-    public CarouselList() {
-        carousels = new Carousel[3];
-        carousels[0] = new Carousel();
-        carousels[1] = new Carousel();
-        carousels[2] = new Carousel();
-    }
 
     public void setCarousels(Carousel[] carousels) {
         this.carousels = carousels;

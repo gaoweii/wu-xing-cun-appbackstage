@@ -1,9 +1,11 @@
 package com.wuxingcunappbackstage.wuxingcunappbackstage.index;
 
 import com.alibaba.fastjson.JSON;
+import com.wuxingcunappbackstage.wuxingcunappbackstage.Test;
 import com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.CarouselList;
 import com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.backgroundcolor.BackgroundColor;
 import com.wuxingcunappbackstage.wuxingcunappbackstage.tools.ImageStream;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +17,9 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/index")
 public class IndexController {
+    @Autowired
+    private ImageStream imageStream;
+    private CarouselList carouselList;
     /*static byte[] image2Bytes(String imgSrc) throws IOException { //手动用流传输 可以用其他代替
             FileInputStream fin  = new FileInputStream(new File(imgSrc));
             byte[] bytes = new byte[fin.available()];
@@ -25,10 +30,9 @@ public class IndexController {
     }*/
     @PostMapping("/carouselList")
     public String carouselList() {
-        CarouselList carouselList = new CarouselList();
         String[] strings = new String[3]; //测试数据 随便写的几个
         for(int i = 0; i < 3; ++i) {
-            strings[i] = "http://192.168.0.104:7000/index/carouselList/img?img=banner" + String.valueOf(i + 2);
+            strings[i] = Test.getIp() + "/index/carouselList/img?img=banner" + String.valueOf(i + 2);
         }
         BackgroundColor[] backgroundColors = new BackgroundColor[3];
         backgroundColors[0] = new BackgroundColor();
@@ -52,6 +56,7 @@ public class IndexController {
     }
     @GetMapping(value = "/ad", produces = MediaType.IMAGE_JPEG_VALUE)
     public byte[] advertisement() throws IOException {
-        return new ImageStream("src/main/resources/ad.jpg").getBytes();
+        imageStream.setSrc("src/main/resources/ad.jpg");
+        return imageStream.getBytes();
     }
 }
