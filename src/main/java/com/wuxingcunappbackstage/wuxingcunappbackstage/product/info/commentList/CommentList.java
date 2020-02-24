@@ -11,6 +11,10 @@ public class CommentList {
         }
     }
 
+    public CommentList(Comment[] comments) {
+        this.comments = comments;
+    }
+
     public void setComments(Comment[] comments) {
         this.comments = comments;
     }

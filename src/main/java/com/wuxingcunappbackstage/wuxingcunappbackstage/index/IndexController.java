@@ -4,8 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.wuxingcunappbackstage.wuxingcunappbackstage.Test;
 import com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.CarouselList;
 import com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.backgroundcolor.BackgroundColor;
+import com.wuxingcunappbackstage.wuxingcunappbackstage.tools.BeanConfig;
 import com.wuxingcunappbackstage.wuxingcunappbackstage.tools.ImageStream;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +19,11 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/index")
 public class IndexController {
+
     @Autowired
     private ImageStream imageStream;
+
+    @Autowired
     private CarouselList carouselList;
     /*static byte[] image2Bytes(String imgSrc) throws IOException { //手动用流传输 可以用其他代替
             FileInputStream fin  = new FileInputStream(new File(imgSrc));
@@ -30,11 +35,13 @@ public class IndexController {
     }*/
     @PostMapping("/carouselList")
     public String carouselList() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
+        carouselList = (CarouselList)context.getBean("getCarouselList");
         String[] strings = new String[3]; //测试数据 随便写的几个
         for(int i = 0; i < 3; ++i) {
             strings[i] = Test.getIp() + "/index/carouselList/img?img=banner" + String.valueOf(i + 2);
         }
-        BackgroundColor[] backgroundColors = new BackgroundColor[3];
+        BackgroundColor[] backgroundColors = new BackgroundColor[3]; //这里随便指定了一些数据
         backgroundColors[0] = new BackgroundColor();
         backgroundColors[1] = new BackgroundColor();
         backgroundColors[2] = new BackgroundColor();

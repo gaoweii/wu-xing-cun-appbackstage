@@ -17,12 +17,10 @@ public class CommentList {
         }
     }
 
-    public CommentList(int i) {
-        comments = new Comment[i];
-        for(int j = 0; j < i; ++j) {
-            comments[j] = new Comment();
-        }
+    public CommentList(Comment[] comments) {
+        this.comments = comments;
     }
+
     public Comment[] getComments() {
         return comments;
     }

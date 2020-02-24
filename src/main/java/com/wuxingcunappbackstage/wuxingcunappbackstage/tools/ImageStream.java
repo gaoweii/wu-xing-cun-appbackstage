@@ -1,14 +1,12 @@
 package com.wuxingcunappbackstage.wuxingcunappbackstage.tools;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-@Component
+@Service //声明其为Spring的一个服务组件类，就不用再配置bean了 具体百度
 public class ImageStream {
     private String src;
     private byte[] bytes;

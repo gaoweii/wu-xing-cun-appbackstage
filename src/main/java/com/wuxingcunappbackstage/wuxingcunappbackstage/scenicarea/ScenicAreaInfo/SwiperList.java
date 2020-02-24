@@ -1,8 +1,8 @@
 package com.wuxingcunappbackstage.wuxingcunappbackstage.scenicarea.ScenicAreaInfo;
 
 public class SwiperList {
-    private int id;
-    private String type;
+    private int id; //图片id
+    private String type = "image"; //类型，直接默认image
     private String url;
 
     public void setId(int id) {

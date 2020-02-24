@@ -1,7 +1,7 @@
 package com.wuxingcunappbackstage.wuxingcunappbackstage;
 
 public class Test {
-    private static String ip = "http://127.0.0.1:7000";
+    private static String ip = "http://192.168.0.104:7000";
 
     public static String getIp() {
         return ip;

@@ -2,12 +2,12 @@ package com.wuxingcunappbackstage.wuxingcunappbackstage.scenicarea.comment;
 
 
 public class Comment {
-    private String name;
-    private String iconSrc;
+    private String name; //用户名
+    private String iconSrc; //用户图标地址
     private long commentTime; //评论的时间，从1900年1月1号0时0分0秒计算
-    private String text;
-    private String ImgSrc;
-    private StarsAndComment starsAndComment;
+    private String text; //用户的评论内容
+    private String ImgSrc; //用户评论图片的资源地址(也可不用做这个功能)
+    private StarsAndComment starsAndComment; //用户的点赞数和子评论数
 
     public String getName() {
         return name;

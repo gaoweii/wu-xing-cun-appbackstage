@@ -2,7 +2,6 @@ package com.wuxingcunappbackstage.wuxingcunappbackstage.index.carouselList.backg
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class BackgroundColor {
     private int red;
     private int green;

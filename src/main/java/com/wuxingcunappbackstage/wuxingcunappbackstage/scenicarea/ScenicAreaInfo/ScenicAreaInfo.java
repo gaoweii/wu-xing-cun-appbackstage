@@ -1,8 +1,8 @@
 package com.wuxingcunappbackstage.wuxingcunappbackstage.scenicarea.ScenicAreaInfo;
 
 public class ScenicAreaInfo {
-    private SwiperList[] swiperList;
-    private String introduction;
+    private SwiperList[] swiperList; //景点图片资源列表
+    private String introduction;  //景点介绍
 
     public String getIntroduction() {
         return introduction;
